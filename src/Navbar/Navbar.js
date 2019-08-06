@@ -12,6 +12,7 @@ const Logo = styled(Title)`
   font-size: 20px;
   color: white;
   font-family: 'Great Vibes', cursive;
+  text-shadow: 1px 1px 1px black;
 `
 
 export function Navbar() {
