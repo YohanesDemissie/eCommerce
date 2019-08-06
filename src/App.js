@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { createGlobalStyle } from 'styled-components'
 import { Navbar } from './Navbar/Navbar.js';
+import { Banner } from './Banner/Banner';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -10,7 +11,13 @@ const GlobalStyle = createGlobalStyle`
 
   .title {
     font-family: 'Cinzel', serif;
-    font-size: 50px;
+    font-size: 100px;
+    line-height: 200px;
+
+  }
+
+  u {
+    padding-bottom: 300px;
   }
 
   h1, h2, h3 {
@@ -23,9 +30,10 @@ class App extends Component {
     return (
       <>
       <Navbar />
-      <div className="title">Demissie Armadio</div>
+        <div className="title">Demissie Armadio</div>
       <h3>~ where high end fashion meets quality and comfort ~</h3>
       <GlobalStyle />
+      <Banner />
         <div>
           ITS A MIYAH MARIOOO!
           LETSAH GOOHW!
