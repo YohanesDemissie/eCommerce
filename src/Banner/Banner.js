@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const Banner = styled.div`
-  height: 200px;
-  background-image: url(img/banner.png);
+  height: 1000px;
+  background-image: url(img/pizzeria.jpeg);
   background-position: center;
-  background-size: covered;
-
+  background-size: cover;
+  filter: contrast(75%);
 `

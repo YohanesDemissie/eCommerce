@@ -6,3 +6,6 @@ yarn add styled-components
 
 #Free Stock photos
 https://www.pexels.com/
+
+#Fonts
+https://fonts.google.com/specimen/Great+Vibes?selection.family=Cinzel|Great+Vibes|Open+Sans|Righteous

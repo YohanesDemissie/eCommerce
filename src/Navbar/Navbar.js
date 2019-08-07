@@ -8,6 +8,7 @@ const NavbarStyled = styled.div`
     padding: 10px;
     position: fixed;
     width: 100%;
+    z-index: 999;
 `
 
 const Logo = styled(Title)`
@@ -20,7 +21,7 @@ const Logo = styled(Title)`
 export function Navbar() {
   return <NavbarStyled>
     <Logo>
-      Demissie Armadillo
+      Demissies' Pizzeria 🍕
     </Logo>
   </NavbarStyled>
 }

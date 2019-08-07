@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { createGlobalStyle } from 'styled-components'
 import { Navbar } from './Navbar/Navbar.js';
 import { Banner } from './Banner/Banner';
+import { Menu } from './Menu/Menu';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -30,13 +31,11 @@ class App extends Component {
     return (
       <>
       <Navbar />
-        <div className="title">Demissie Armadio</div>
-      <h3>~ where high end fashion meets quality and comfort ~</h3>
       <GlobalStyle />
       <Banner />
+      <Menu />
         <div>
-          ITS A MIYAH MARIOOO!
-          LETSAH GOOHW!
+
         </div>
       </>
     );
