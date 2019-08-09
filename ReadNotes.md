@@ -24,3 +24,6 @@ const Logo = styled(Title)`
   color: white;;
 `
 
+#WATCH PART 13 
+FOR DIFFERENT SECTIONS OF THE MENU LIKE SANDWHICHES AND SIDES AND STUFF
+
