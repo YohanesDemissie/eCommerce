@@ -10,14 +10,16 @@ const MenuStyled = styled.div`
 // Each object is a key which is the section name(pizza, sides, wings, etc.), amnd an value which is an array
 // entries creaties an array of key value pairs (array of arrays).
 // then loop through the foods from that section
-export function Menu() {
+export function Menu({setOpenFood}) {
   return <MenuStyled>
     {Object.entries(foods).map(([sectionName, foods]) => (
       <>
         <h1> {sectionName} </h1>
         <FoodGrid>
           {foods.map(food => (
-            <Food img={food.img}>
+            <Food img={food.img} onClick={() => {
+              setOpenFood(food)
+            }}>
               <FoodLabel>
                 {food.name}
               </FoodLabel>
