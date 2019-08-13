@@ -1,43 +1,53 @@
 export const foodItems = [
-  {
+{
     name: 'Bacon & Olives',
-    img: './img/bacon-olives.jpeg'
+    img: './img/bacon-olives.jpeg',
+    section: 'Pizza'
   },
   {
     name: 'Chefs Daily special',
-    img: './img/chefs-special.jpeg'
+    img: './img/chefs-special.jpeg',
+    section: 'Pizza'
   },
   {
     name: 'Classic Cheese',
-    img: './img/classic-cheese.jpeg'
+    img: './img/classic-cheese.jpeg',
+    section: 'Pizza'
   },
   {
     name: 'Fiery Jalepeno',
-    img: './img/firey-jalepeno.jpeg'
+    img: './img/firey-jalepeno.jpeg',
+    section: 'Pizza'
   },
   {
     name: 'Garden Special',
-    img: './img/garden-special.jpeg'
+    img: './img/garden-special.jpeg',
+    section: 'Pizza'
   },
   {
     name: 'Garlic Ham',
-    img: './img/garlic-ham.jpeg'
+    img: './img/garlic-ham.jpeg',
+    section: 'Pizza'
   },
   {
     name: 'Italian Mozzerela Special',
-    img: './img/italian-mozzy-special.jpeg'
+    img: './img/italian-mozzy-special.jpeg',
+    section: 'Pizza'
   },
   {
     name: 'Supreme Sausage',
-    img: './img/supreme-sausage.jpeg'
+    img: './img/supreme-sausage.jpeg',
+    section: 'Pizza'
   },
   {
     name: 'Zesty Italian',
-    img: './img/zesty-italian.jpeg'
+    img: './img/zesty-italian.jpeg',
+    section: 'Pizza'
   },
   {
     name: 'Supreme Italian Combo',
-    img: './img/supreme-italian-combo.jpg'
+    img: './img/supreme-italian-combo.jpg',
+    section: 'Pizza'
   }
 ]
 

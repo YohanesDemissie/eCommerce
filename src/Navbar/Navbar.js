@@ -19,9 +19,12 @@ const Logo = styled(Title)`
 `
 
 export function Navbar() {
-  return <NavbarStyled>
-    <Logo>
-      Demissies' Pizzeria 🍕
-    </Logo>
-  </NavbarStyled>
+  return (
+    <NavbarStyled>
+      <Logo>
+        Demissies' Pizzeria 
+        <span role="img" aria-label="pizza slice">🍕</span>
+      </Logo>
+    </NavbarStyled>
+  )
 }
