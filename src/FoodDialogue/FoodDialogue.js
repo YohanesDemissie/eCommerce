@@ -66,10 +66,17 @@ const DialogBannerName = styled(FoodLabel)`
 `
 
 
-
-export function FoodDialog({openFood, setOpenFood}) {
+export function FoodDialog({openFood, setOpenFood, setOrders, orders}) {
   function close() {
     setOpenFood();
+  }
+  if (!openFood) return null;
+  const order = {
+    name: openFood.name
+  }
+  function addToOrder() {
+    setOrders([ ...orders, order ]); //spread tje current orders while adding the new one
+    close();
   }
   return (
     openFood ? (
@@ -79,11 +86,9 @@ export function FoodDialog({openFood, setOpenFood}) {
           <DialogBanner img={openFood.img}>
             <DialogBannerName>{openFood.name}</DialogBannerName>
           </DialogBanner>
-          <DialogContent>
-
-          </DialogContent>
+          <DialogContent />
           <DialogFooter>
-            <ConfirmButton>Add to order</ConfirmButton>
+            <ConfirmButton onClick={addToOrder}>Add to order</ConfirmButton>
           </DialogFooter>
         </Dialog>
       </>

@@ -21,11 +21,17 @@ import { DialogContent, DialogFooter, ConfirmButton } from '../FoodDialogue/Food
   height: 100%;
  `
 
- export function Order() {
-   return <OrderStyled>
-      <OrderContent>Looking empty brohv</OrderContent>
+ export function Order({ orders }) {
+   return (
+    <OrderStyled>
+     {orders.length === 0 ? (
+      <OrderContent>Looking empty brohv</OrderContent> 
+     ) : (
+       <div>Found {orders.length} orders</div>
+     )}
      <DialogFooter>
       <ConfirmButton>Checkout</ConfirmButton>
      </DialogFooter>
-   </OrderStyled>
- }
+    </OrderStyled>
+  )
+}
