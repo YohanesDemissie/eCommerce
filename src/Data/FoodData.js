@@ -1,53 +1,71 @@
+export function formatPrice(price){
+  return price.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD'
+  })
+}
+
 export const foodItems = [
 {
     name: 'Bacon & Olives',
     img: './img/bacon-olives.jpeg',
-    section: 'Pizza'
+    section: 'Pizza',
+    price: 1.30
   },
   {
     name: 'Chefs Daily special',
     img: './img/chefs-special.jpeg',
-    section: 'Pizza'
+    section: 'Pizza',
+    price: 1.50
   },
   {
     name: 'Classic Cheese',
     img: './img/classic-cheese.jpeg',
-    section: 'Pizza'
+    section: 'Pizza',
+    price: 1.09
   },
   {
     name: 'Fiery Jalepeno',
     img: './img/firey-jalepeno.jpeg',
-    section: 'Pizza'
+    section: 'Pizza',
+    price: 1.35
   },
   {
     name: 'Garden Special',
     img: './img/garden-special.jpeg',
-    section: 'Pizza'
+    section: 'Pizza',
+    price: 1.75
   },
   {
     name: 'Garlic Ham',
     img: './img/garlic-ham.jpeg',
-    section: 'Pizza'
+    section: 'Pizza',
+    price: 1.45
   },
   {
     name: 'Italian Mozzerela Special',
     img: './img/italian-mozzy-special.jpeg',
-    section: 'Pizza'
+    section: 'Pizza',
+    price: 1.99
   },
   {
     name: 'Supreme Sausage',
     img: './img/supreme-sausage.jpeg',
-    section: 'Pizza'
+    section: 'Pizza',
+    price: 1.75
+
   },
   {
     name: 'Zesty Italian',
     img: './img/zesty-italian.jpeg',
-    section: 'Pizza'
+    section: 'Pizza',
+    price: 1.35
   },
   {
     name: 'Supreme Italian Combo',
     img: './img/supreme-italian-combo.jpg',
-    section: 'Pizza'
+    section: 'Pizza',
+    price: 1.75
   }
 ]
 

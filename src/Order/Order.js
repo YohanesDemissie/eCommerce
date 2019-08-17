@@ -21,13 +21,30 @@ import { DialogContent, DialogFooter, ConfirmButton } from '../FoodDialogue/Food
   height: 100%;
  `
 
+ const OrderContainer = styled.div`
+  padding: 10px;
+  border-bottom: 1px solid grey;
+ `
+
+ const OrderItem = styled.div`
+  padding: 10px 0px;
+ `
+
  export function Order({ orders }) {
    return (
     <OrderStyled>
      {orders.length === 0 ? (
-      <OrderContent>Looking empty brohv</OrderContent> 
+      <OrderContent>0 items in cart</OrderContent>
      ) : (
-       <div>Found {orders.length} orders</div>
+        <OrderContent>
+          {" "}
+          <OrderContainer>Your Order: </OrderContainer>{" "}
+          {orders.map(order => (
+            <OrderContainer>
+              {order.name}
+            </OrderContainer>
+          ))}
+        </OrderContent>
      )}
      <DialogFooter>
       <ConfirmButton>Checkout</ConfirmButton>
