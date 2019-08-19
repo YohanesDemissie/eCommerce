@@ -5,6 +5,7 @@ import { Menu } from './Menu/Menu';
 import { FoodDialog } from './FoodDialogue/FoodDialogue';
 import { GlobalStyle } from './Styles/GlobalStyles';
 import { Order } from './Order/Order';
+import { useTitle } from './Hooks/useTitle';
 
 import { useOpenFood } from './Hooks/useOpenFood';
 import { useOrders } from './Hooks/useOrders';
@@ -12,6 +13,7 @@ import { useOrders } from './Hooks/useOrders';
 function App () {
   const openFood = useOpenFood();
   const orders = useOrders();
+  useTitle({ ...openFood, ...orders})
     return (
       <>
       <GlobalStyle />

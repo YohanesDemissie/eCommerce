@@ -9,3 +9,7 @@ https://www.pexels.com/
 
 #Fonts
 https://fonts.google.com/specimen/Great+Vibes?selection.family=Cinzel|Great+Vibes|Open+Sans|Righteous
+
+#Icons
+favicon.io
+once you find your favorite icon, download the favicon.ico link
