@@ -4,6 +4,8 @@ import { FoodLabel } from '../Menu/FoodGrid';
 import { pizzaRed } from '../Styles/colors';
 import { Title } from '../Styles/title';
 import { formatPrice } from '../Data/FoodData'
+import { QuantityInput } from './QuantityInput';
+import { useQuantity } from '../Hooks/useQuantity';
 
 const Dialog = styled.div`
 width: 500px;
@@ -19,8 +21,9 @@ flex-direction: column;
 
 //overflow allows for hieghts to be priorritized without strething beyond the screen. allowing the user to just scroll up and down the meny with the respected footers
 export const DialogContent = styled.div`
-  minimum-height: 100px;
   overflow: auto;
+  min-height: 100px;
+  padding: 0px 40px;
 `
 
 export const DialogFooter = styled.div`
@@ -67,7 +70,8 @@ const DialogBannerName = styled(FoodLabel)`
 `
 
 
-export function FoodDialog({openFood, setOpenFood, setOrders, orders}) {
+function FoodDialogContainer({openFood, setOpenFood, setOrders, orders}) {
+  const quantity = useQuantity(openFood && openFood.quantity);
   function close() {
     setOpenFood();
   }
@@ -80,19 +84,25 @@ export function FoodDialog({openFood, setOpenFood, setOrders, orders}) {
     close();
   }
   return (
-    openFood ? (
       <>
         <DialogShadow onClick={close} />
         <Dialog>
           <DialogBanner img={openFood.img}>
             <DialogBannerName>{openFood.name}</DialogBannerName>
           </DialogBanner>
-          <DialogContent />
+          <DialogContent>
+            <QuantityInput quantity={quantity}/>
+          </DialogContent>
           <DialogFooter>
             <ConfirmButton onClick={addToOrder}>Add to order: {formatPrice(openFood.price)}</ConfirmButton>
           </DialogFooter>
         </Dialog>
       </>
-    ) : null
   )
+}
+
+//setting up hooks
+export function FoodDialog(props) {
+  if(!props.openFood) return null;
+  return <FoodDialogContainer {...props} />
 }
