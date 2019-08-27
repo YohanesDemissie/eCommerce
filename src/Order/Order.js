@@ -36,6 +36,12 @@ import { getPrice } from '../FoodDialogue/FoodDialogue';
  `;
 
  export function Order({ orders }) {
+   //reduce method with iterator and accumulator starting at 0
+   const subTotal = orders.reduce((total, order) => {
+    return total + getPrice(order)
+   }, 0);
+   const tax = subTotal * 0.09;
+   const total = subTotal + tax;
    return (
     <OrderStyled>
      {orders.length === 0 ? (
@@ -54,6 +60,23 @@ import { getPrice } from '../FoodDialogue/FoodDialogue';
               </OrderItem>
             </OrderContainer>
           ))}
+          <OrderContainer>
+            <OrderItem>
+              <div />
+              <div>Sub-Total: </div>
+              <div>{formatPrice(subTotal)}</div>
+            </OrderItem>
+            <OrderItem>
+              <div />
+              <div>Tax: </div>
+              <div>{formatPrice(tax)}</div>
+            </OrderItem>
+            <OrderItem>
+              <div />
+              <div>Total: </div>
+              <div>{formatPrice(total)}</div>
+            </OrderItem>
+          </OrderContainer>
         </OrderContent>
      )}
      <DialogFooter>
