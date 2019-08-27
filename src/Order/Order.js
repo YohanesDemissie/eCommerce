@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { DialogContent, DialogFooter, ConfirmButton } from '../FoodDialogue/FoodDialogue';
 import { formatPrice } from '../Data/FoodData';
+import { getPrice } from '../FoodDialogue/FoodDialogue';
 
 // flex-direction allows the elememnts to stac kon each other rather side by side 
  const OrderStyled = styled.div`
@@ -46,9 +47,10 @@ import { formatPrice } from '../Data/FoodData';
           {orders.map(order => (
             <OrderContainer>
               <OrderItem>
-                <div>1</div>
+                <div>{order.quantity}</div>
                 <div>{order.name}</div>
-                <div>{formatPrice(order.price)}</div>
+                <div />
+                <div>{formatPrice(getPrice(order))}</div>
               </OrderItem>
             </OrderContainer>
           ))}

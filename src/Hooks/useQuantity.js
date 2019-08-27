@@ -7,7 +7,7 @@ export function useQuantity(defaultQuantity) {
     if (!(+e.target.value >= 1)) { //if its not a number equal to or greater than 1
       setValue(1)
     }
-    setValue(e.target.value);
+    setValue(+e.target.value); //"+" sets value as an integer
   }
 
   return {
