@@ -35,6 +35,11 @@ import { getPrice } from '../FoodDialogue/FoodDialogue';
   justify-content: space-between;
  `;
 
+ const DetailItem = styled.div`
+  color: grey;
+  font-size: 10px;
+ `;
+
  export function Order({ orders }) {
    //reduce method with iterator and accumulator starting at 0
    const subTotal = orders.reduce((total, order) => {
@@ -58,6 +63,12 @@ import { getPrice } from '../FoodDialogue/FoodDialogue';
                 <div />
                 <div>{formatPrice(getPrice(order))}</div>
               </OrderItem>
+              <DetailItem>
+                {order.toppings.filter(t => t.checked)
+                  .map(topping => topping.name)
+                  .join(", ")
+                }
+              </DetailItem>
             </OrderContainer>
           ))}
           <OrderContainer>
