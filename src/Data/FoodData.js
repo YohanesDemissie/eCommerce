@@ -66,8 +66,14 @@ export const foodItems = [
     img: './img/supreme-italian-combo.jpg',
     section: 'Pizza',
     price: 1.75
+  },
+  {
+    price: 1,
+    name: 'Soda',
+    section: 'Drinks',
+    choices: ['Coke', 'Sprite', 'Root Beer']
   }
-]
+];
 
 // SEE CHAPTER 3 FOR FURTHER INTAKE ON LOWER FUNCTION
 // resuce takes the same value "res" and current value "food". Like array and iterator
