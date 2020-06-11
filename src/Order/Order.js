@@ -40,13 +40,20 @@ import { getPrice } from '../FoodDialogue/FoodDialogue';
   font-size: 10px;
  `;
 
- export function Order({ orders }) {
+ export function Order({ orders, setOrders }) {
    //reduce method with iterator and accumulator starting at 0
    const subTotal = orders.reduce((total, order) => {
     return total + getPrice(order)
    }, 0);
    const tax = subTotal * 0.09;
    const total = subTotal + tax;
+
+   const deleteItem = index => {
+     const newOrders = [...orders];
+     newOrders.splice(index, 1);
+     setOrders(newOrders);
+   }
+
    return (
     <OrderStyled>
      {orders.length === 0 ? (
@@ -55,12 +62,12 @@ import { getPrice } from '../FoodDialogue/FoodDialogue';
         <OrderContent>
           {" "}
           <OrderContainer>Your Order: </OrderContainer>{" "}
-          {orders.map(order => (
+          {orders.map((order, index) => (
             <OrderContainer>
               <OrderItem>
                 <div>{order.quantity}</div>
                 <div>{order.name}</div>
-                <div />
+                <div style={{cursor: 'pointer'}} onClick={() => {deleteItem(index)}}>🗑</div>
                 <div>{formatPrice(getPrice(order))}</div>
               </OrderItem>
               <DetailItem>
