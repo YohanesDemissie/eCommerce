@@ -40,7 +40,7 @@ import { getPrice } from '../FoodDialogue/FoodDialogue';
   font-size: 10px;
  `;
 
- export function Order({ orders, setOrders }) {
+ export function Order({ orders, setOrders, setOpenFood }) {
    //reduce method with iterator and accumulator starting at 0
    const subTotal = orders.reduce((total, order) => {
     return total + getPrice(order)
@@ -52,6 +52,21 @@ import { getPrice } from '../FoodDialogue/FoodDialogue';
      const newOrders = [...orders];
      newOrders.splice(index, 1);
      setOrders(newOrders);
+   }
+
+   const checkoutPayload = function() {
+    console.log(orders);
+    // WE CAN PRINT THE ORDER PAYLOAD BELOW WITH 'ORDERS' Array
+    // orders.map((order, index) => {
+    //   order.quantity
+    //   order.name
+    //   formatPrice(getPrice(order))
+    //   order.toppings.filter(t => t.checked).map(topping => topping.name).join(", ")
+    //   formatPrice(subTotal)
+    //   formatPrice(tax)
+    //   formatPrice(total)
+    // })
+    return;
    }
 
    return (
@@ -99,7 +114,7 @@ import { getPrice } from '../FoodDialogue/FoodDialogue';
         </OrderContent>
      )}
      <DialogFooter>
-      <ConfirmButton>Checkout</ConfirmButton>
+      <ConfirmButton onClick={checkoutPayload}>Checkout</ConfirmButton>
      </DialogFooter>
     </OrderStyled>
   )

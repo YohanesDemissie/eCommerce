@@ -107,7 +107,7 @@ const order = {
 
   function addToOrder()
    {
-    setOrders([ ...orders, order ]); //spread tje current orders while adding the new one
+    setOrders([ ...orders, order ]); //spread the current orders while adding the new one
     close();
   }
   return (
